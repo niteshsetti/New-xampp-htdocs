@@ -1,0 +1,29 @@
+$(document).ready(function() {
+    $('#myTable').DataTable();
+});
+$(document).ready(function(){
+    fetch_data();
+    function fetch_data(){
+        $.ajax({
+            url:"/don",
+            method:"get",
+            async:false,
+            dataType:"json",
+            success:function(response){
+                console.log(response.students);
+                $.each(response.students,function(key,value){
+                    $('tbody').append('<tr>\
+                            <td>'+value.Name+'</td>\
+                            <td>'+value.Email+'</td>\
+                            <td>'+value.Languages+'</td>\
+                            <td>'+value.Gender+'</td>\
+                            <td>'+value.Phone+'</td>\
+                            <td>'+value.Description+'</td>\
+                            <td>'+value.Country+'</td>\
+                       </tr>'
+                    );
+                });
+            }
+        });
+    }
+});

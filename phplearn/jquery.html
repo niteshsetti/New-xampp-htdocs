@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+       <p id="sar">I am Learning JQUERY</p>
+        <button id="click">Click Me</button>
+        <script>
+            var count=0
+          $("#click").click(function(){
+              count+=1;
+              if(count%2==0)
+              {
+                  $("#sar").hide();
+              }
+              else{
+                  $("#sar").show();
+              }
+          });
+        </script>
+    </body>
+</html>
